@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  URIRunner
+
+  Created by HatanoKenta on 2019/04/12.
+  Copyright © 2019年 kenta. All rights reserved.
+*/
+
+"Idle" = "Idle";
+"Running AppleScript" = "Running AppleScript";
+"Running Automator Workflow" = "Running Automator Workflow"
