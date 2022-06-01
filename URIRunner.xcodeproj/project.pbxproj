@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A702C13221BD3330016B0BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A702C12221BD3330016B0BD /* AppDelegate.m */; };
+		4A702C13221BD3330016B0BD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A702C12221BD3330016B0BD /* AppDelegate.mm */; };
 		4A702C15221BD3350016B0BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A702C14221BD3350016B0BD /* Assets.xcassets */; };
 		4A702C18221BD3350016B0BD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A702C16221BD3350016B0BD /* MainMenu.xib */; };
-		4A702C1B221BD3350016B0BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A702C1A221BD3350016B0BD /* main.m */; };
+		4A702C1B221BD3350016B0BD /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A702C1A221BD3350016B0BD /* main.mm */; };
 		4AE00DF522604BF60019682C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE00DF422604BF60019682C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A702C0E221BD3330016B0BD /* URIRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URIRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A702C11221BD3330016B0BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4A702C12221BD3330016B0BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4A702C12221BD3330016B0BD /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4A702C14221BD3350016B0BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A702C17221BD3350016B0BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4A702C19221BD3350016B0BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A702C1A221BD3350016B0BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4A702C1A221BD3350016B0BD /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.mm; sourceTree = "<group>"; };
 		4AE00DF422604BF60019682C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,11 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				4A702C11221BD3330016B0BD /* AppDelegate.h */,
-				4A702C12221BD3330016B0BD /* AppDelegate.m */,
+				4A702C12221BD3330016B0BD /* AppDelegate.mm */,
 				4A702C14221BD3350016B0BD /* Assets.xcassets */,
 				4A702C16221BD3350016B0BD /* MainMenu.xib */,
 				4A702C19221BD3350016B0BD /* Info.plist */,
-				4A702C1A221BD3350016B0BD /* main.m */,
+				4A702C1A221BD3350016B0BD /* main.mm */,
 				4AE00DF422604BF60019682C /* Localizable.strings */,
 			);
 			path = URIRunner;
@@ -136,8 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A702C1B221BD3350016B0BD /* main.m in Sources */,
-				4A702C13221BD3330016B0BD /* AppDelegate.m in Sources */,
+				4A702C1B221BD3350016B0BD /* main.mm in Sources */,
+				4A702C13221BD3330016B0BD /* AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

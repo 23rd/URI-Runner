@@ -11,6 +11,8 @@
 #define AUTOMATOR_URL_PREFIX @"amrunner://"
 #define APPLESCRIPT_URL_PREFIX @"asrunner://"
 
+#define auto __auto_type
+
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
@@ -36,7 +38,7 @@
 
 - (void) handleURLEvent:(NSAppleEventDescriptor*)event
 		withReplyEvent:(NSAppleEventDescriptor*)replyEvent {
-	NSString *url = [event
+	const auto url = [event
 		paramDescriptorForKeyword:keyDirectObject].stringValue;
 
 	if ([url hasPrefix:AUTOMATOR_URL_PREFIX]) {
@@ -47,14 +49,14 @@
 		[self.statusTextField
 			setStringValue:NSLocalizedString(@"Running AppleScript", nil)];
 
-		NSString *source = [
+		const auto source = [
 				[url
 					stringByReplacingCharactersInRange:NSMakeRange(
 						0,
 						APPLESCRIPT_URL_PREFIX.length)
 					withString:@""]
 			stringByRemovingPercentEncoding];
-		NSAppleScript *appleScript = [[NSAppleScript alloc]
+		const auto appleScript = [[NSAppleScript alloc]
 			initWithSource:source];
 
 		NSDictionary *error;
