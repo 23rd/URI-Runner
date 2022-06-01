@@ -9,15 +9,13 @@
 #import "AppDelegate.h"
 
 #define AUTOMATOR_URL_PREFIX @"amrunner://"
-#define APPLESCRIPT_URL_PREFIX @"asrunner://"
+#define APPLESCRIPT_URL_PREFIX @"quicktimerunner://"
 
 #define auto __auto_type
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSTextField *statusTextField;
-@property (weak) IBOutlet NSProgressIndicator *statusProgressIndicator;
 
 @end
 
@@ -44,28 +42,28 @@
 	if ([url hasPrefix:AUTOMATOR_URL_PREFIX]) {
 		// TODO: execute Automator workflow
 	} else if ([url hasPrefix:APPLESCRIPT_URL_PREFIX]) {
-		[self.statusProgressIndicator setIndeterminate:YES];
-		[self.statusProgressIndicator startAnimation:self];
-		[self.statusTextField
-			setStringValue:NSLocalizedString(@"Running AppleScript", nil)];
+		auto source = [url
+			stringByReplacingCharactersInRange:NSMakeRange(
+				0,
+				APPLESCRIPT_URL_PREFIX.length)
+			withString:@""];
+		source = [source stringByRemovingPercentEncoding];
+		source = [source
+			stringByReplacingOccurrencesOfString:@"https//"
+			withString:@""];
+		source = [source
+			stringByReplacingOccurrencesOfString:@"http//"
+			withString:@""];
 
-		const auto source = [
-				[url
-					stringByReplacingCharactersInRange:NSMakeRange(
-						0,
-						APPLESCRIPT_URL_PREFIX.length)
-					withString:@""]
-			stringByRemovingPercentEncoding];
-		const auto appleScript = [[NSAppleScript alloc]
-			initWithSource:source];
+		const auto task = [NSTask new];
+		[task setLaunchPath:@"/bin/zsh"];
+		[task setArguments:@[
+			@"-c",
+			[NSString stringWithFormat:@"source ~/.zshrc && qty %@", source]
+		]];
+		[task launch];
 
-		NSDictionary *error;
-		[appleScript executeAndReturnError:&error];
-		// TODO: error handling
-
-		[self.statusProgressIndicator setIndeterminate:NO];
-		[self.statusProgressIndicator stopAnimation:self];
-		[self.statusTextField setStringValue:NSLocalizedString(@"Idle", nil)];
+		[[NSApplication sharedApplication] terminate:self];
 	}
 }
 
